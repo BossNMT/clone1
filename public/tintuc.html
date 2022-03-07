@@ -1,0 +1,945 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html lang="vi" prefix="og: https://ogp.me/ns#" class="ie9 loading-site no-js"> <![endif]-->
+<!--[if IE 8 ]> <html lang="vi" prefix="og: https://ogp.me/ns#" class="ie8 loading-site no-js"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="vi" prefix="og: https://ogp.me/ns#" class="loading-site no-js"> <!--<![endif]-->
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://taipei101group.com/xmlrpc.php" />
+	<script type="rocketlazyloadscript">(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<!-- Search Engine Optimization by Rank Math PRO - https://s.rankmath.com/home -->
+<title>Tin Tức - Tuyển dụng Taipei101</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3Aregular%2C700%2C400%2C700%7CDancing%20Script%3Aregular%2C400&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3Aregular%2C700%2C400%2C700%7CDancing%20Script%3Aregular%2C400&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3Aregular%2C700%2C400%2C700%7CDancing%20Script%3Aregular%2C400&#038;display=swap" /></noscript><style id="wpr-usedcss">@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,main{display:block}a{background-color:transparent}a:active,a:hover{outline-width:0}strong{font-weight:inherit}strong{font-weight:bolder}img{border-style:none}svg:not(:root){overflow:hidden}button,input,select,textarea{font:inherit}button,input,select{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{cursor:pointer}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}button:-moz-focusring,input:-moz-focusring{outline:1px dotted ButtonText}textarea{overflow:auto}[type=checkbox],[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box}html{-webkit-box-sizing:border-box;box-sizing:border-box;background-attachment:fixed;-webkit-tap-highlight-color:transparent}body{color:#777;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}img{max-width:100%;height:auto;display:inline-block;vertical-align:middle}p:empty{display:none}a,button,input{-ms-touch-action:manipulation;touch-action:manipulation}object{max-width:100%}.col{position:relative;margin:0;padding:0 15px 30px;width:100%}.col-inner{position:relative;margin-left:auto;margin-right:auto;width:100%;background-position:50% 50%;background-size:cover;background-repeat:no-repeat;-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto}@media screen and (min-width:850px){.col:first-child .col-inner{margin-left:auto;margin-right:0}.col+.col .col-inner{margin-right:auto;margin-left:0}}@media screen and (max-width:849px){.col{padding-bottom:30px}}@media screen and (min-width:850px){.row-divided>.col+.col:not(.large-12){border-left:1px solid #ececec}}@media screen and (min-width:850px){.large-3{max-width:25%;-ms-flex-preferred-size:25%;flex-basis:25%}.large-9{max-width:75%;-ms-flex-preferred-size:75%;flex-basis:75%}.large-12{max-width:100%;-ms-flex-preferred-size:100%;flex-basis:100%}}body,.container,.row{width:100%;margin-left:auto;margin-right:auto}.container{padding-left:15px;padding-right:15px}.container,.row{max-width:1080px}.row.row-collapse{max-width:1050px}.row.row-large{max-width:1110px}.flex-row{-js-display:flex;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}.text-center .flex-row{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.header .flex-row{height:100%}.flex-col{max-height:100%}.flex-grow{-webkit-box-flex:1;-ms-flex:1;flex:1;-ms-flex-negative:1;-ms-flex-preferred-size:auto!important}.flex-left{margin-right:auto}.flex-right{margin-left:auto}@media all and (-ms-high-contrast:none){.nav>li>a>i{top:-1px}}.row,.gallery{width:100%;-js-display:flex;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap}.row>div:not(.col):not([class^=col-]){width:100%!important}.row .gallery,.row .row:not(.row-collapse),.container .row:not(.row-collapse){padding-left:0;padding-right:0;margin-left:-15px;margin-right:-15px;width:auto}.row .container{padding-left:0;padding-right:0}.slider-wrapper+.row:not(.row-collapse),.banner-grid-wrapper+.row:not(.row-collapse),.banner+.row:not(.row-collapse),.section+.row:not(.row-collapse){margin-top:30px}.row-collapse{padding:0}.row-collapse>.col{padding:0!important}.row-collapse>.col .container{max-width:100%}@media screen and (min-width:850px){.row-large{padding-left:0;padding-right:0}.row .row-large:not(.row-collapse),.container .row-large:not(.row-collapse){margin-left:-30px;margin-right:-30px;margin-bottom:0}.row-large>.col{padding:0 30px 30px;margin-bottom:0}}.section{padding:30px 0;position:relative;min-height:auto;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row;flex-flow:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.section.dark{background-color:#666}.container .section,.row .section{padding-left:30px;padding-right:30px}.is-sticky-section+.sticky-section-helper{min-height:100vh!important;background-color:#000}.sticky-section-helper+div{position:relative;background-color:#fff;-webkit-box-shadow:15px 15px 15px 15px rgba(0,0,0,.1);box-shadow:15px 15px 15px 15px rgba(0,0,0,.1)}.sticky-section{padding:0!important;height:100%!important;height:100vh!important;width:100%!important;top:0;left:0;right:0;margin:0 auto;background-color:#fff;position:relative;overflow:hidden}.is-sticky-section{position:fixed!important}.nav-dropdown{position:absolute;min-width:260px;max-height:0;z-index:9;padding:20px 0 20px;opacity:0;margin:0;-webkit-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;color:#777;background-color:#fff;text-align:left;display:table;left:-99999px}.dark.nav-dropdown{color:#f1f1f1}.nav-dropdown:after{visibility:hidden;display:block;content:"";clear:both;height:0}.nav-dropdown li{display:block;margin:0;vertical-align:top}.nav-dropdown li ul{margin:0;padding:0}.nav-dropdown>li.html{min-width:260px}li.current-dropdown>.nav-dropdown{opacity:1;max-height:inherit;left:-15px}.nav-right li.current-dropdown:last-child>.nav-dropdown,.nav-right li.has-dropdown:hover:last-child>.nav-dropdown{left:auto;right:-15px}.nav-dropdown>li>a{width:auto;display:block;padding:10px 20px;line-height:1.3}.nav-dropdown>li:last-child:not(.nav-dropdown-col)>a{border-bottom:0!important}li.current-dropdown>.nav-dropdown-full,li.has-dropdown:hover>.nav-dropdown-full{position:fixed;margin-left:0!important;margin-right:0!important;left:50%!important;-webkit-transition:opacity .3s!important;-o-transition:opacity .3s!important;transition:opacity .3s!important;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);right:auto;width:100%;max-width:1150px!important;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.nav-dropdown-has-arrow li.has-dropdown:after,.nav-dropdown-has-arrow li.has-dropdown:before{bottom:-2px;z-index:10;opacity:0;left:50%;border:solid transparent;content:"";height:0;width:0;position:absolute;pointer-events:none}.nav-dropdown-has-arrow li.has-dropdown:after{border-color:rgba(221,221,221,0);border-bottom-color:#fff;border-width:8px;margin-left:-8px}.nav-dropdown-has-arrow li.has-dropdown:before{z-index:-999;border-width:11px;margin-left:-11px}.nav-dropdown-has-shadow .nav-dropdown{-webkit-box-shadow:1px 1px 15px rgba(0,0,0,.15);box-shadow:1px 1px 15px rgba(0,0,0,.15)}.nav-dropdown-has-arrow.nav-dropdown-has-border li.has-dropdown:before{border-bottom-color:#ddd}.nav-dropdown-has-border .nav-dropdown{border:2px solid #ddd}.nav-dropdown-has-arrow li.current-dropdown.has-dropdown:before,.nav-dropdown-has-arrow li.current-dropdown.has-dropdown:after{-webkit-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;opacity:1}.nav p{margin:0;padding-bottom:0}.nav,.nav ul:not(.nav-dropdown){margin:0;padding:0}.nav>li>a.button,.nav>li>button{margin-bottom:0}.nav{width:100%;position:relative;display:inline-block;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.nav>li{display:inline-block;list-style:none;margin:0;margin:0 7px;padding:0;position:relative;-webkit-transition:background-color .3s;-o-transition:background-color .3s;transition:background-color .3s}.nav>li>a{padding:10px 0;display:inline-block;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.html .nav>li>a{padding-top:0;padding-bottom:0}.nav-left{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.nav-right{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.nav>li>a,.nav-dropdown>li>a{color:rgba(102,102,102,.85);-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s}.nav-dropdown>li>a{display:block}.nav>li>a:hover,.nav>li.active>a,.nav>li.current>a,.nav>li>a.active,.nav>li>a.current,.nav-dropdown li.active>a,.nav-dropdown>li>a:hover{color:rgba(17,17,17,.85)}.nav li:first-child{margin-left:0!important}.nav li:last-child{margin-right:0!important}.nav-uppercase>li>a{letter-spacing:.02em;text-transform:uppercase;font-weight:bolder}li.html .row,li.html form,li.html select,li.html input{margin:0}li.html>.button{margin-bottom:0}.nav-pagination>li>span,.nav-pagination>li>a{font-size:1.1em;display:block;height:2.25em;line-height:2em;text-align:center;width:auto;min-width:2.25em;padding:0 7px;font-weight:bolder;border-radius:99px;border:2px solid currentColor;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s;vertical-align:top}.nav-pagination>li i{font-size:1.2em;vertical-align:middle;top:-1px}.nav-pagination>li>.current,.nav-pagination>li>span:hover,.nav-pagination>li>a:hover{border-color:#446084;background-color:#446084;color:#fff}.off-canvas .mobile-sidebar-slide{position:fixed;top:0;bottom:0;width:100%;overflow:hidden}.off-canvas .mobile-sidebar-slide .sidebar-menu{height:100%;padding-top:0;padding-bottom:0;-webkit-transition:-webkit-transform .3s;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s;-o-transition:transform .3s;-webkit-transform:translateX(0%);-ms-transform:translateX(0%);transform:translateX(0%);will-change:transform}.nav-slide{height:100%;padding-top:20px;overflow:visible;overflow-y:auto;-webkit-overflow-scrolling:auto}.nav-slide .active>.toggle{-webkit-transform:none;-ms-transform:none;transform:none}.nav-slide>li{-ms-flex-negative:0;flex-shrink:0}.nav-slide-header .toggle{position:relative!important;top:0!important;margin-left:0!important;padding-left:5px;text-align:left;width:100%}.nav-slide-header .toggle i{margin-right:2px;font-size:1.4em}.text-center .nav-slide-header .toggle{width:auto;margin-left:auto!important;margin-right:auto!important}.nav:hover>li:not(:hover)>a:before{opacity:0}.tabbed-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap}.tabbed-content .nav{width:100%}@media (min-width:850px){.tabbed-content .nav-vertical{padding-top:0;width:25%}}.sidebar-menu-tabs__tab{-webkit-box-flex:1;-ms-flex:1 0 50%;flex:1 0 50%;max-width:50%;list-style-type:none;background-color:rgba(0,0,0,.02);text-align:center}.sidebar-menu-tabs__tab.active{background-color:rgba(0,0,0,.05)}.sidebar-menu-tabs.nav>li{margin:0}.sidebar-menu-tabs.nav>li>a{display:-webkit-box;display:-ms-flexbox;display:flex;padding:15px 10px}.toggle{height:auto;width:45px;line-height:1;-webkit-box-shadow:none!important;box-shadow:none!important;padding:0;color:currentColor;opacity:.6;margin:0 5px 0 0}.toggle i{font-size:1.8em;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}.toggle:focus{color:currentColor}.toggle:hover{cursor:pointer;opacity:1}.active>.toggle{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}.widget .toggle{width:1em;min-height:1em;margin:0 0 0 5px}.widget .toggle i{top:1px;font-size:1.2em}.nav.nav-vertical{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column;flex-flow:column}.nav.nav-vertical li{list-style:none;margin:0;width:100%}.nav-vertical li li{font-size:1em;padding-left:.5em}.nav-vertical>li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.nav-vertical>li ul{width:100%}.nav-vertical>li>ul>li a,.nav-vertical>li>a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:auto;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.nav-vertical>li.html{padding-top:1em;padding-bottom:1em}.nav-vertical>li>ul li a{-webkit-transition:color .2s;-o-transition:color .2s;transition:color .2s;color:#666}.nav-vertical>li>ul li a:hover{opacity:1;color:#111}.nav-vertical>li>ul{margin:0 0 2em;padding-left:1em}.nav-sidebar.nav-vertical>li.menu-item.active,.nav-sidebar.nav-vertical>li.menu-item:hover{background-color:rgba(0,0,0,.05)}.nav-sidebar.nav-vertical>li+li{border-top:1px solid #ececec}.dark .nav-sidebar.nav-vertical>li+li{border-color:rgba(255,255,255,.2)}.nav-vertical>li+li{border-top:1px solid #ececec}.text-center .toggle{margin-left:-35px}.text-center .nav-vertical li{border:0}.text-center.nav-vertical li li,.text-center .nav-vertical li li{padding-left:0}.nav-vertical .social-icons{display:block;width:100%}.header-vertical-menu__fly-out{position:absolute;z-index:9;opacity:0;visibility:hidden;width:250px;background-color:#fff}.header-vertical-menu__fly-out .nav-top-link{font-size:.9em;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.header-vertical-menu__fly-out .current-dropdown .nav-dropdown{top:0;left:100%!important}.header-vertical-menu__fly-out--open{opacity:1;visibility:visible}.stuck .header-vertical-menu__fly-out,.sticky-hide-on-scroll--active .header-vertical-menu__fly-out{opacity:0;visibility:hidden}.header-wrapper:not(.stuck) .header-vertical-menu__fly-out{-webkit-transition:opacity .25s,visibility .25s;-o-transition:opacity .25s,visibility .25s;transition:opacity .25s,visibility .25s}.badge{display:table;z-index:20;pointer-events:none;height:2.8em;width:2.8em;-webkit-backface-visibility:hidden;backface-visibility:hidden}.badge.top{left:0}.badge-inner{display:table-cell;vertical-align:middle;text-align:center;width:100%;height:100%;background-color:#446084;line-height:.85;color:#fff;font-weight:bolder;padding:2px;white-space:nowrap;-webkit-transition:background-color .3s,color .3s,border .3s;-o-transition:background-color .3s,color .3s,border .3s;transition:background-color .3s,color .3s,border .3s}.badge+.badge{opacity:.9;width:2.5em;height:2.5em}.badge+.badge+.badge{opacity:.8}.badge-outline .badge-inner{color:#446084;background-color:#fff;border:2px solid currentColor}.has-hover:hover .badge-outline .badge-inner{border-color:#446084;background-color:#446084;color:#fff}.badge-outline{margin-left:-.4em}.widget .badge-outline .badge-inner{background-color:transparent}.widget .badge{margin:0!important}.dark .widget .badge-outline .badge-inner{color:#fff;opacity:.7}.banner{position:relative;background-color:#446084;width:100%;min-height:30px}.dark .banner a{color:#fff}.video-bg{-o-object-fit:cover;object-fit:cover;-o-object-position:50% 50%;object-position:50% 50%;font-family:"object-fit: cover; object-position: center center;";position:absolute;width:100%;height:100%}.box{width:100%;position:relative;margin:0 auto}.box>a{width:100%;display:block}.box a{display:inline-block}.box,.box-image,.box-text{-webkit-transition:opacity .3s,background-color .3s,-webkit-transform .3s;transition:opacity .3s,background-color .3s,-webkit-transform .3s;transition:opacity .3s,transform .3s,background-color .3s;transition:opacity .3s,transform .3s,background-color .3s,-webkit-transform .3s;-o-transition:opacity .3s,transform .3s,background-color .3s}.box-image>a,.box-image>div>a{display:block}.box-text{padding-top:.7em;padding-bottom:1.4em;position:relative;width:100%;font-size:.9em}@media (max-width:549px){.box-text{font-size:85%}}.box-image{position:relative;height:auto;margin:0 auto;overflow:hidden}.box-image[style*=-radius]{-webkit-mask-image:-webkit-radial-gradient(white,black)}.box-text.text-center{padding-left:10px;padding-right:10px}.box-image img{max-width:100%;width:100%;margin:0 auto}.box-shade .box-text{position:absolute;width:100%;max-height:100%;bottom:0;padding-left:1.5em;padding-right:1.5em}.box-shade.dark .box-text{text-shadow:1px 1px 1px rgba(0,0,0,.5)}.button,button,input[type=submit],input[type=reset],input[type=button]{position:relative;display:inline-block;background-color:transparent;text-transform:uppercase;font-size:.97em;letter-spacing:.03em;cursor:pointer;font-weight:bolder;text-align:center;color:currentColor;text-decoration:none;border:1px solid transparent;vertical-align:middle;border-radius:0;margin-top:0;margin-right:1em;text-shadow:none;line-height:2.4em;min-height:2.5em;padding:0 1.2em;max-width:100%;-webkit-transition:border .3s,background .3s,opacity .3s,color .3s,-webkit-transform .3s,-webkit-box-shadow .3s;transition:border .3s,background .3s,opacity .3s,color .3s,-webkit-transform .3s,-webkit-box-shadow .3s;transition:transform .3s,border .3s,background .3s,box-shadow .3s,opacity .3s,color .3s;transition:transform .3s,border .3s,background .3s,box-shadow .3s,opacity .3s,color .3s,-webkit-transform .3s,-webkit-box-shadow .3s;-o-transition:transform .3s,border .3s,background .3s,box-shadow .3s,opacity .3s,color .3s;text-rendering:optimizeLegibility;-webkit-box-sizing:border-box;box-sizing:border-box}.button span{display:inline-block;line-height:1.6}.button.is-outline{line-height:2.19em}.nav>li>a.button:hover,.nav>li>a.button{padding-top:0;padding-bottom:0}.nav>li>a.button:hover{color:#fff}.button,input[type=submit],input[type=submit].button,input[type=reset].button,input[type=button].button{color:#fff;background-color:#446084;background-color:var(--primary-color);border-color:rgba(0,0,0,.05)}.button.is-outline,input[type=submit].is-outline,input[type=reset].is-outline,input[type=button].is-outline{border:2px solid currentColor;background-color:transparent}.button:hover,input[type=submit]:hover,input[type=reset]:hover,input[type=button]:hover{outline:none;opacity:1;color:#fff;-webkit-box-shadow:inset 0 0 0 100px rgba(0,0,0,.2);box-shadow:inset 0 0 0 100px rgba(0,0,0,.2)}.dark .button,.dark input[type=submit],.dark input[type=reset],.dark input[type=button]{color:#fff}.is-outline{color:silver}.is-outline:hover{-webkit-box-shadow:none!important;box-shadow:none!important}input[type=submit],input[type=submit].button,.primary{background-color:#446084}.primary.is-outline{color:#446084}.is-outline:hover,.primary.is-outline:hover{color:#fff;background-color:#446084;border-color:#446084}.secondary{background-color:#d26e4b}.secondary.is-outline{color:#d26e4b}.secondary.is-outline:hover{background-color:#d26e4b;border-color:#d26e4b;color:#fff}a.primary:not(.button),a.secondary:not(.button){background-color:transparent}.text-center .button:first-of-type{margin-left:0!important}.text-center .button:last-of-type{margin-right:0!important}.scroll-for-more{margin-left:0!important}.scroll-for-more:not(:hover){opacity:.7}.flex-col button,.flex-col .button,.flex-col input{margin-bottom:0}.is-divider{height:3px;display:block;background-color:rgba(0,0,0,.1);margin:1em 0 1em;width:100%;max-width:30px}.widget .is-divider{margin-top:.66em}.dark .is-divider{background-color:rgba(255,255,255,.3)}form{margin-bottom:0}input[type=email],input[type=date],input[type=search],input[type=number],input[type=text],input[type=tel],input[type=url],input[type=password],textarea,select,.select-resize-ghost{-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #ddd;padding:0 .75em;height:2.507em;font-size:.97em;border-radius:0;max-width:100%;width:100%;vertical-align:middle;background-color:#fff;color:#333;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-webkit-transition:color .3s,border .3s,background .3s,opacity .3s;-o-transition:color .3s,border .3s,background .3s,opacity .3s;transition:color .3s,border .3s,background .3s,opacity .3s}input:hover,textarea:hover,select:hover{-webkit-box-shadow:inset 0 -1.8em 1em 0 rgba(0,0,0,0);box-shadow:inset 0 -1.8em 1em 0 rgba(0,0,0,0)}input[type=email],input[type=search],input[type=number],input[type=url],input[type=tel],input[type=text],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{padding-top:.7em;min-height:120px}input[type=email]:focus,input[type=search]:focus,input[type=number]:focus,input[type=tel]:focus,input[type=text]:focus,input[type=password]:focus,textarea:focus,select:focus{-webkit-box-shadow:0 0 5px #ccc;box-shadow:0 0 5px #ccc;opacity:1!important;outline:0;color:#333;background-color:#fff}input[type=checkbox],input[type=radio]{display:inline;margin-right:10px;font-size:16px}select,.select-resize-ghost{-webkit-box-shadow:inset 0 -1.4em 1em 0 rgba(0,0,0,.02);box-shadow:inset 0 -1.4em 1em 0 rgba(0,0,0,.02);background-color:#fff;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml;charset=utf8, %3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23333\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\' class=\'feather feather-chevron-down\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'%3E%3C/polyline%3E%3C/svg%3E");background-position:right .45em top 50%;background-repeat:no-repeat;padding-right:1.4em;background-size:auto 16px;border-radius:0;display:block}.select-resize-ghost{display:inline-block;width:auto;position:absolute;opacity:0}select.resize-select{width:55px}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){select::-ms-expand{display:none}select:focus::-ms-value{background:transparent;color:currentColor}}.links>li>a:before,i[class^=icon-],i[class*=" icon-"]{font-family:"fl-icons"!important;font-display:block;speak:none!important;margin:0;padding:0;display:inline-block;font-style:normal!important;font-weight:normal!important;font-variant:normal!important;text-transform:none!important;position:relative;line-height:1.2}button i,.button i{vertical-align:middle;top:-1.5px}button.icon:not(.button),a.icon:not(.button){font-family:sans-serif;margin-left:.25em;margin-right:.25em;font-size:1.2em}.header a.icon:not(.button){margin-left:.3em;margin-right:.3em}.button.icon{margin-left:.12em;margin-right:.12em;min-width:2.5em;padding-left:.6em;padding-right:.6em;display:inline-block}.button.icon i{font-size:1.2em}.button.icon i+span{padding-right:.5em}.button.icon.is-small{border-width:1px}.button.icon.is-small i{top:-1px}.button.icon.circle{padding-left:0;padding-right:0}.button.icon.circle>span{margin:0 8px}.button.icon.circle>span+i{margin-left:-4px}.button.icon.circle>i{margin:0 8px}.button.icon.circle>i+span{margin-left:-4px}.button.icon.circle>i:only-child{margin:0}.nav>li>a>i{vertical-align:middle;-webkit-transition:color .3s;-o-transition:color .3s;transition:color .3s;font-size:20px}.nav>li>a>i+span{margin-left:5px}.nav>li>a>span+i{margin-left:5px}.nav>li>a>i.icon-search{font-size:1.2em}.nav>li>a>i.icon-menu{font-size:1.9em}.nav>li.has-icon>a>i{min-width:1em}.nav-vertical>li>a>i{font-size:16px;opacity:.6}.button:not(.icon)>i{margin-left:-.15em;margin-right:.4em}.button:not(.icon)>span+i{margin-right:-.15em;margin-left:.4em}img{-webkit-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s;opacity:1}.col-inner>.img:not(:last-child),.col>.img:not(:last-child){margin-bottom:1em}.img{position:relative}.img,.img img{width:100%}.image-cover{position:relative;height:auto;overflow:hidden;padding-top:100%;background-position:50% 50%;background-size:cover}.image-cover img{right:0;width:100%;height:100%;bottom:0;left:0;top:0;position:absolute;-o-object-position:50% 50%;object-position:50% 50%;-o-object-fit:cover;object-fit:cover;font-family:"object-fit: cover;"}.mfp-bg{top:0;left:0;width:100%;height:100%;z-index:1042;overflow:hidden;position:fixed;background:#0b0b0b;opacity:0;-webkit-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s}.mfp-bg.mfp-ready{opacity:.6}.mfp-bg.mfp-removing{opacity:0!important}.mfp-wrap{top:0;left:0;width:100%;height:100%;z-index:1043;position:fixed;outline:none!important;-webkit-backface-visibility:hidden}.mfp-container{text-align:center;position:absolute;width:100%;height:100%;left:0;top:0;padding:30px;-webkit-box-sizing:border-box;box-sizing:border-box}.mfp-container:before{content:"";display:inline-block;height:100%;vertical-align:middle}.mfp-image-holder{padding:40px 6.66%}.mfp-align-top .mfp-container:before{display:none}.mfp-content{position:relative;display:inline-block;vertical-align:middle;max-width:100%;margin:0 auto;text-align:left;z-index:1045;-webkit-transform:translateY(-30px);-ms-transform:translateY(-30px);transform:translateY(-30px);opacity:0;-webkit-transition:opacity .3s,-webkit-transform .5s;transition:opacity .3s,-webkit-transform .5s;transition:transform .5s,opacity .3s;transition:transform .5s,opacity .3s,-webkit-transform .5s;-o-transition:transform .5s,opacity .3s}.mfp-content-inner{-webkit-box-shadow:1px 1px 5px 0 rgba(0,0,0,.2);box-shadow:1px 1px 5px 0 rgba(0,0,0,.2)}.mfp-ready .mfp-content{opacity:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.mfp-ready.mfp-removing .mfp-content{opacity:0}.mfp-inline-holder .mfp-content,.mfp-ajax-holder .mfp-content{width:100%;cursor:auto}.mfp-ajax-cur{cursor:progress}.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close{cursor:-webkit-zoom-out;cursor:zoom-out}.mfp-zoom{cursor:pointer;cursor:-webkit-zoom-in;cursor:zoom-in}.mfp-auto-cursor .mfp-content{cursor:auto}.mfp-close,.mfp-arrow,.mfp-preloader,.mfp-counter{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mfp-loading.mfp-figure{display:none}.mfp-hide{display:none!important}.mfp-preloader{color:#ccc;position:absolute;top:50%;width:auto;text-align:center;margin-top:-.8em;left:8px;right:8px;z-index:1044}.mfp-preloader a{color:#ccc}.mfp-preloader a:hover{color:#fff}.mfp-s-ready .mfp-preloader{display:none}.mfp-s-error .mfp-content{display:none}.mfp-close{cursor:pointer;outline:none;z-index:1046;-webkit-box-shadow:none;box-shadow:none;position:fixed;top:0;right:0;text-decoration:none;text-align:center;opacity:0;padding:0;mix-blend-mode:difference;margin:0!important;color:#fff;font-style:normal;font-weight:300;font-size:40px;min-height:0;width:40px;-webkit-backface-visibility:hidden;height:40px;line-height:40px;font-family:Arial,monospace;-webkit-transition:opacity .6s,-webkit-transform .6s;transition:opacity .6s,-webkit-transform .6s;transition:opacity .6s,transform .6s;transition:opacity .6s,transform .6s,-webkit-transform .6s;-o-transition:opacity .6s,transform .6s;-webkit-transform:translateY(50%) translateZ(1px);transform:translateY(50%) translateZ(1px)}.mfp-close svg{pointer-events:none}.mfp-content .mfp-close{position:absolute}.mfp-ready .mfp-close{opacity:.6;-webkit-transform:translateY(0) translateZ(1px);transform:translateY(0) translateZ(1px)}.mfp-removing .mfp-close{display:none!important}.mfp-close:hover{opacity:1}.mfp-close-btn-in .mfp-close{top:0!important;color:currentColor}.mfp-counter{position:absolute;top:0;right:0;color:#ccc;font-size:12px;line-height:18px}.mfp-arrow{position:fixed;opacity:.6;color:#fff;mix-blend-mode:difference;top:50%;z-index:1046;margin:0;text-align:center;width:50px;height:50px}.mfp-arrow i{pointer-events:none;font-size:42px!important}.mfp-arrow:hover{opacity:1}.mfp-arrow:active{top:50.1%}.mfp-arrow-left{left:0;-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%)}.mfp-arrow-right{right:0;-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}.mfp-ready .mfp-arrow-right,.mfp-ready .mfp-arrow-left{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}.mfp-iframe-holder{padding-top:40px;padding-bottom:40px}.mfp-iframe-holder .mfp-content{line-height:0;width:100%;max-width:900px}.mfp-iframe-holder .mfp-close{top:-40px}.mfp-iframe-scaler{width:100%;height:0;overflow:hidden;padding-top:56.25%}.mfp-iframe-scaler iframe{position:absolute;display:block;top:0;left:0;width:100%;height:100%;-webkit-box-shadow:0 0 8px rgba(0,0,0,.6);box-shadow:0 0 8px rgba(0,0,0,.6);background:#000}img.mfp-img{width:auto;max-width:100%;height:auto;display:block;-webkit-backface-visibility:hidden;backface-visibility:hidden;line-height:0;padding:0 0 40px;margin:0 auto}.mfp-figure{line-height:0}.mfp-figure:after{content:"";position:absolute;left:0;top:0;bottom:40px;display:block;right:0;width:auto;height:auto;z-index:-1;-webkit-box-shadow:0 0 8px rgba(0,0,0,.6);box-shadow:0 0 8px rgba(0,0,0,.6);background:#444}.mfp-figure small{color:#bdbdbd;display:block;font-size:12px;line-height:14px}.mfp-figure figure{margin:0}.mfp-bottom-bar{margin-top:-36px;position:absolute;top:100%;left:0;width:100%;cursor:auto}.mfp-title{font-size:11px;text-align:left;line-height:18px;color:#f3f3f3;word-wrap:break-word;padding-right:36px}.mfp-title a{text-decoration:underline;color:#f3f3f3}.mfp-title a:hover{text-decoration:none;color:#f3f3f3;opacity:.8}.mfp-image-holder .mfp-content{max-width:100%}.mfp-gallery .mfp-image-holder .mfp-figure{cursor:pointer}@media screen and (max-width:800px)and (orientation:landscape),screen and (max-height:300px){.mfp-img-mobile .mfp-image-holder{padding-left:0;padding-right:0}.mfp-img-mobile img.mfp-img{padding:0}.mfp-img-mobile .mfp-figure:after{top:0;bottom:0}.mfp-img-mobile .mfp-figure small{display:inline;margin-left:5px}.mfp-img-mobile .mfp-bottom-bar{background:rgba(0,0,0,.6);bottom:0;margin:0;top:auto;padding:3px 5px;position:fixed;-webkit-box-sizing:border-box;box-sizing:border-box}.mfp-img-mobile .mfp-bottom-bar:empty{padding:0}.mfp-img-mobile .mfp-counter{right:5px;top:3px}}@media (max-width:849px){body.body-scroll-lock--active .mfp-wrap{position:fixed!important;overflow:auto}}.processing,.loading-spin{position:relative}.processing:before,.loading-spin{content:"";margin:0 auto;font-size:10px;text-indent:-9999em;border-top:3px solid rgba(0,0,0,.1)!important;border-right:3px solid rgba(0,0,0,.1)!important;border-bottom:3px solid rgba(0,0,0,.1)!important;opacity:.8;border-left:3px solid #446084;-webkit-animation:spin .6s infinite linear;animation:spin .6s infinite linear;border-radius:50%;width:30px;height:30px;pointer-events:none}.box-image.processing:before,.dark .processing:before,.dark.processing:before,.dark.loading-spin,.dark .loading-spin{border-top:3px solid rgba(0,0,0,.1)!important;border-right:3px solid rgba(0,0,0,.1)!important;border-bottom:3px solid rgba(0,0,0,.1)!important;border-left:3px solid #fff!important}.box-image.processing:after{content:"";background-color:#000;opacity:.1;position:absolute;top:0;left:0;right:0;bottom:0}.processing:before,.loading-spin.centered{position:absolute;top:50%;left:50%;margin-left:-15px;margin-top:-15px;z-index:99}.loading-spin{border-radius:50%;width:30px;height:30px}.button.loading{opacity:1!important;position:relative;color:rgba(255,255,255,.05);pointer-events:none!important}.button.loading:after{-webkit-animation:spin 500ms infinite linear;animation:spin 500ms infinite linear;border:2px solid #fff;border-radius:32px;border-right-color:transparent!important;border-top-color:transparent!important;content:"";display:block;height:16px;top:50%;margin-top:-8px;left:50%;margin-left:-8px;position:absolute;width:16px}.is-outline .button.loading:after{border-color:#446084}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.off-canvas .mfp-content{-ms-scrollbar-base-color:#000;-ms-scrollbar-arrow-color:#000;-ms-overflow-style:-ms-autohiding-scrollbar}.off-canvas .nav-vertical>li>a{padding-top:15px;padding-bottom:15px}.off-canvas .nav-vertical li li>a{padding-top:5px;padding-bottom:5px}.off-canvas .hide-for-off-canvas{display:none!important}.off-canvas .hide-for-small,.off-canvas .hide-for-medium{display:inline-block!important}.off-canvas-right .mfp-content,.off-canvas-left .mfp-content{position:fixed;top:0;bottom:0;width:260px;background-color:rgba(255,255,255,.95);left:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;-webkit-transition:-webkit-transform .2s;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s,-webkit-transform .2s;-o-transition:transform .2s;-webkit-transform:translateX(-270px);-ms-transform:translateX(-270px);transform:translateX(-270px);-webkit-box-shadow:0 0 10px 0 rgba(0,0,0,.5);box-shadow:0 0 10px 0 rgba(0,0,0,.5)}.off-canvas-right.dark .mfp-content,.off-canvas-left.dark .mfp-content{background-color:rgba(0,0,0,.95)}.off-canvas-right .mfp-content{left:auto;right:0;-webkit-transform:translateX(270px);-ms-transform:translateX(270px);transform:translateX(270px)}.off-canvas-center .nav-vertical>li>ul>li a,.off-canvas-center .nav-vertical>li>a{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.off-canvas-center .nav-vertical>li>a{font-size:1.5em}.off-canvas-center .mfp-container{padding:0}.off-canvas-center .mfp-content{padding-top:50px;max-width:700px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}.off-canvas-center .mfp-content .searchform{max-width:260px;margin:0 auto}.off-canvas-center.mfp-bg.mfp-ready{opacity:.85}.mfp-bg.off-canvas-center:not(.dark){background-color:#fff;opacity:.95}.off-canvas-center .nav-sidebar.nav-vertical>li{border:0}.off-canvas-center .nav-sidebar.nav-vertical>li>a{padding-right:30px;padding-left:30px}.off-canvas-center .nav-sidebar.nav-vertical>li .toggle{position:absolute;top:15px;right:0}.off-canvas-center:not(.dark) .mfp-close{color:currentColor}.off-canvas.mfp-removing .mfp-content{opacity:0!important}.off-canvas-left.mfp-ready .mfp-content,.off-canvas-right.mfp-ready .mfp-content{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0);opacity:1}.has-off-canvas .off-canvas-blur{-webkit-filter:blur(5px);filter:blur(5px)}.has-off-canvas .off-canvas-zoom{-webkit-transform:scale(.98);-ms-transform:scale(.98);transform:scale(.98)}.has-off-canvas .current-lightbox-clicked{opacity:0!important;-webkit-transform:translateY(-7px);-ms-transform:translateY(-7px);transform:translateY(-7px)}.off-canvas .sidebar-menu{padding:30px 0}.off-canvas .sidebar-inner{padding:30px 20px}.off-canvas:not(.off-canvas-center) .nav-vertical li>a{padding-left:20px}.off-canvas:not(.off-canvas-center) li.html{padding:20px}.slider-wrapper{position:relative}.slider>.img,.flickity-slider>.img,.slider-wrapper:last-child{margin-bottom:0}.slider{position:relative;scrollbar-width:none}.slider:not(.flickity-enabled){white-space:nowrap;overflow-y:hidden;overflow-x:scroll;width:auto;-ms-overflow-style:-ms-autohiding-scrollbar}.slider::-webkit-scrollbar{width:0px!important;height:0px!important}.slider:not(.flickity-enabled)>*{display:inline-block!important;white-space:normal!important;vertical-align:top}.slider:not(.flickity-enabled)>a{width:100%}.slider>div:not(.col),.slider>a,.slider>p,.slider>a>img,.slider>img{width:100%}.flickity-slider>div:not(.col),.flickity-slider>a,.flickity-slider>p,.flickity-slider>a>img,.flickity-slider>img{width:100%!important;padding:0;margin:0;-webkit-transition:opacity .6s,-webkit-transform .6s,-webkit-box-shadow .6s;transition:opacity .6s,-webkit-transform .6s,-webkit-box-shadow .6s;transition:transform .6s,opacity .6s,box-shadow .6s;transition:transform .6s,opacity .6s,box-shadow .6s,-webkit-transform .6s,-webkit-box-shadow .6s;-o-transition:transform .6s,opacity .6s,box-shadow .6s}.flickity-slider>.row:not(.is-selected){opacity:0}.flickity-enabled{position:relative;display:block}.flickity-enabled:focus{outline:none}.flickity-slider{position:absolute;width:100%;height:100%}.slider-has-parallax .bg{-webkit-transition:opacity .3s!important;-o-transition:opacity .3s!important;transition:opacity .3s!important}.slider-auto-height{-webkit-transition:height .2s;-o-transition:height .2s;transition:height .2s}table{width:100%;margin-bottom:1em;border-color:#ececec;border-spacing:0}a{color:#334862;text-decoration:none}a:focus,.button:focus,button:focus,input:focus{outline:none}a.plain{color:currentColor;-webkit-transition:color .3s,opacity .3s,-webkit-transform .3s;transition:color .3s,opacity .3s,-webkit-transform .3s;transition:color .3s,opacity .3s,transform .3s;transition:color .3s,opacity .3s,transform .3s,-webkit-transform .3s;-o-transition:color .3s,opacity .3s,transform .3s}.nav-dark a.plain:hover{opacity:.7}a:hover{color:#000}.dark a,.dark .widget a{color:currentColor}.dark a:hover,.dark .widget a:hover{color:#fff}ul.links{margin:5px 0;font-size:.85em}ul.links li{margin:0 .4em;display:inline-block}ul.links li a{color:currentColor}ul.links li:before{font-family:"fl-icons";display:inline-block;margin-right:5px}ul.links li:first-child{margin-left:0}ul.links li:last-child{margin-right:0}ul{list-style:disc}ul{margin-top:0;padding:0}ul ul{margin:1.5em 0 1.5em 3em}li{margin-bottom:.6em}.entry-content ul li,.entry-summary ul li,.col-inner ul li{margin-left:1.3em}.button,button,input,textarea,select{margin-bottom:1em}form,p,ul{margin-bottom:1.3em}form p{margin-bottom:.5em}body{line-height:1.6}h1,h2,h5,h6{color:#555;width:100%;margin-top:0;margin-bottom:.5em;text-rendering:optimizeSpeed}h1{font-size:1.7em;line-height:1.3}h2{font-size:1.6em;line-height:1.3}h5{font-size:1em}h6{font-size:.85em;opacity:.8}h1.entry-title.mb{margin-bottom:30px}@media (max-width:549px){h1{font-size:1.4em}h2{font-size:1.2em}}h6 span{font-weight:400;font-weight:500}p{margin-top:0}h1>span,h2>span,h5>span,h6>span{-webkit-box-decoration-break:clone;box-decoration-break:clone}.uppercase,h6{line-height:1.05;letter-spacing:.05em;text-transform:uppercase}.is-normal{font-weight:400}.uppercase{line-height:1.2;text-transform:uppercase}.is-xlarge{font-size:1.5em}.is-large{font-size:1.15em}.is-small,.is-small.button{font-size:.8em}.is-smaller{font-size:.75em}.is-xsmall{font-size:.7em}.is-xxsmall{font-size:.6em}@media (max-width:549px){.is-xlarge{font-size:1.8em}.is-large{font-size:1em}}.box-text h1,.box-text h2,.box-text h5,.box-text h6,.box-text a:not(.button){line-height:1.3;margin-top:.1em;margin-bottom:.1em}.box-text p{margin-top:.1em;margin-bottom:.1em}.box-text .button{margin-top:1em}.banner .button{margin-top:.5em;margin-bottom:.5em}.banner .is-divider,.banner .text-center .is-divider{margin-top:1em;margin-bottom:1em}.banner h1{font-size:3.5em}.banner h2{font-size:2.9em}.banner h2,.banner h1{padding:0;font-weight:400;margin-top:.2em;margin-bottom:.2em;line-height:1}.banner h6,.banner h5,.banner p{padding:0;margin-top:1em;margin-bottom:1em}.nav>li>a{font-size:.8em}.nav>li.html{font-size:.85em}.container:after,.row:after,.clearfix:after{content:"";display:table;clear:both}@media (max-width:549px){.small-text-center{text-align:center!important;width:100%!important;float:none!important}}@media (min-width:850px){.show-for-medium{display:none!important}}@media (max-width:849px){.hide-for-medium{display:none!important}.medium-text-center .pull-left,.medium-text-center .pull-right{float:none}.medium-text-center{text-align:center!important;width:100%!important;float:none!important}}.full-width{width:100%!important;max-width:100%!important;padding-left:0!important;padding-right:0!important;display:block}.pull-right{float:right;margin-right:0!important}.pull-left{float:left;margin-left:0!important}.mb{margin-bottom:30px}.mb-0{margin-bottom:0!important}.ml-0{margin-left:0!important}.mb:last-child{margin-bottom:0}.pb-half{padding-bottom:15px}.pt-half{padding-top:15px}.text-left{text-align:left}.text-center{text-align:center}.text-center>div,.text-center>div>div,.text-center .is-divider{margin-left:auto;margin-right:auto}.text-center .pull-right,.text-center .pull-left{float:none}.text-left .is-divider{margin-right:auto;margin-left:0}.relative{position:relative!important}.absolute{position:absolute!important}.fixed{position:fixed!important;z-index:12}.top{top:0}.bottom{bottom:0}.fill{position:absolute;top:0;left:0;height:100%;right:0;bottom:0;padding:0!important;margin:0!important}.pull-right{float:right}.pull-left{float:left}.circle{border-radius:999px!important;-o-object-fit:cover;object-fit:cover}.circle img{border-radius:999px!important;-o-object-fit:cover;object-fit:cover}.hidden{display:none!important;visibility:hidden!important}.z-1{z-index:21}.z-top{z-index:9995}.block{display:block}.inline-block{display:inline-block}.op-7{opacity:.7}.no-scrollbar{-ms-overflow-style:-ms-autohiding-scrollbar;scrollbar-width:none}.no-scrollbar::-webkit-scrollbar{width:0px!important;height:0px!important}.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,.6);box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto!important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}.mfp-ready .nav-anim>li{opacity:1;-webkit-transform:none;-ms-transform:none;transform:none}@-webkit-keyframes stuckMoveDown{0%{-webkit-transform:translateY(-100%);transform:translateY(-100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes stuckMoveDown{0%{-webkit-transform:translateY(-100%);transform:translateY(-100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes stuckMoveUp{0%{-webkit-transform:translateY(100%);transform:translateY(100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes stuckMoveUp{0%{-webkit-transform:translateY(100%);transform:translateY(100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes stuckFadeIn{0%{opacity:0}100%{opacity:1}}@keyframes stuckFadeIn{0%{opacity:0}100%{opacity:1}}.has-hover .bg,.has-hover [class*=image-] img{-webkit-transition:opacity .6s,-webkit-filter .6s,-webkit-transform .6s,-webkit-box-shadow .3s;transition:opacity .6s,-webkit-filter .6s,-webkit-transform .6s,-webkit-box-shadow .3s;transition:filter .6s,opacity .6s,transform .6s,box-shadow .3s;transition:filter .6s,opacity .6s,transform .6s,box-shadow .3s,-webkit-filter .6s,-webkit-transform .6s,-webkit-box-shadow .3s;-o-transition:filter .6s,opacity .6s,transform .6s,box-shadow .3s}.shade{content:" ";position:absolute;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.2);background:-webkit-gradient(linear,left bottom,left top,from(#323232),color-stop(33%,rgba(50,50,50,0)));background:-o-linear-gradient(bottom,#323232 0%,rgba(50,50,50,0) 33%);background:linear-gradient(to top,#323232 0%,rgba(50,50,50,0) 33%);opacity:.3;pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transition:opacity .3s;-o-transition:opacity .3s;transition:opacity .3s}.box:hover .shade{opacity:.5}.box-shade:not(.dark) .shade{opacity:.8;background:rgba(255,255,255,.2);background:-webkit-gradient(linear,left bottom,left top,from(white),color-stop(33%,rgba(255,255,255,0)));background:-o-linear-gradient(bottom,white 0%,rgba(255,255,255,0) 33%);background:linear-gradient(to top,white 0%,rgba(255,255,255,0) 33%)}.button.tooltip{opacity:1}.dark,.dark p{color:#f1f1f1}.dark h1,.dark h2,.dark h5,.dark h6{color:#fff}.nav-dark .is-outline,.dark .nav>li>a,.dark .nav>li.html,.dark .nav-vertical>li>ul li a,.nav-dropdown.dark>li>a,.nav-dark .nav>li>a,.nav-dark .nav>li>button{color:rgba(255,255,255,.8)}.dark .nav>li>a:hover,.dark .nav>li.active>a,.dark .nav>li>a.active,.nav-dark .nav>li.current>a,.nav-dark .nav>li>a:hover,.nav-dark .nav>li.active>a,.nav-dropdown.dark>li>a:hover,.nav-dark a.plain:hover,.nav-dark .nav>li>a.active{color:#fff}.nav-dropdown.dark>li>a{border-color:rgba(255,255,255,.2)}.nav-dark .nav>li.html{color:#fff}html{overflow-x:hidden}@media (max-width:849px){body{overflow-x:hidden}}#wrapper,#main{background-color:#fff;position:relative}#main.dark{background-color:#333}.page-wrapper{padding-top:30px;padding-bottom:30px}.is-sticky-column{will-change:min-height}.ux-body-overlay{display:block;position:fixed;top:0;left:0;bottom:0;right:0;height:100%;width:100%;background-color:rgba(0,0,0,.3);z-index:29;opacity:0;visibility:hidden;-webkit-transition:visibility .3s,opacity .3s ease-in-out;-o-transition:visibility .3s,opacity .3s ease-in-out;transition:visibility .3s,opacity .3s ease-in-out}.ux-body-overlay--hover-active{opacity:1;visibility:visible}.header,.header-wrapper{width:100%;z-index:30;position:relative;background-size:cover;background-position:50% 0;-webkit-transition:background-color .3s,opacity .3s;-o-transition:background-color .3s,opacity .3s;transition:background-color .3s,opacity .3s}.header-bg-color{background-color:rgba(255,255,255,.9)}.header-top{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-wrap:no-wrap;flex-wrap:no-wrap}.header.has-transparent,.header.transparent{position:absolute}.header.transparent:not(.stuck){left:auto;right:auto}.header.transparent .header-wrapper,.header.transparent .header-bg-image,.header.transparent .header-bg-color{-webkit-box-shadow:none;box-shadow:none;background-color:transparent;background-image:none!important}.header-bg-image,.header-bg-color{background-position:50% 0;-webkit-transition:background .4s;-o-transition:background .4s;transition:background .4s}.header-top{background-color:#446084;z-index:11;position:relative;min-height:20px}.header-main{z-index:10;position:relative}.top-divider{margin-bottom:-1px;border-top:1px solid currentColor;opacity:.1}.nav-dark .top-divider{display:none}.stuck{top:0;position:fixed;left:0;right:0;margin:0 auto}.sticky-jump .stuck{-webkit-animation:stuckMoveDown .6s;animation:stuckMoveDown .6s}.sticky-shrink .stuck .header-main{-webkit-transition:height .8s;-o-transition:height .8s;transition:height .8s}.stuck .header-inner,.stuck .logo,.stuck .logo img{padding-top:0;margin-top:0}.header-wrapper:not(.stuck) .logo img{-webkit-transition:max-height .5s;-o-transition:max-height .5s;transition:max-height .5s}.header-wrapper.stuck,.layout-shadow #wrapper{-webkit-box-shadow:1px 1px 10px rgba(0,0,0,.15);box-shadow:1px 1px 10px rgba(0,0,0,.15)}.post{margin:0 0 30px}.entry-header-text{padding:1.5em 0 1.5em}.entry-header-text.text-center{padding-left:1.5em;padding-right:1.5em}.entry-header-text-top{padding-top:0}.entry-content{padding-top:1.5em;padding-bottom:1.5em}.article-inner{-webkit-transition:opacity .3s,-webkit-box-shadow .5s,-webkit-transform .3s;transition:opacity .3s,-webkit-box-shadow .5s,-webkit-transform .3s;transition:opacity .3s,box-shadow .5s,transform .3s;transition:opacity .3s,box-shadow .5s,transform .3s,-webkit-box-shadow .5s,-webkit-transform .3s;-o-transition:opacity .3s,box-shadow .5s,transform .3s}.banner h2.entry-title{font-size:2em}.badge.post-date{top:7%}.entry-image img{width:100%}.post .entry-summary p:last-of-type{margin-bottom:0}footer.entry-meta{font-size:.8em;border-top:1px solid #ececec;border-bottom:2px solid #ececec;padding:.5em 0 .6em}.box-blog-post .is-divider{margin-top:.5em;margin-bottom:.5em;height:2px}.more-link{margin-top:1.5em}.updated:not(.published){display:none}.row .entry-content .gallery{padding:0}.widget{margin-bottom:1.5em}.widget ul{margin:0}.widget li{list-style:none}.widget>ul>li{list-style:none;margin-bottom:.3em;text-align:left;margin:0}.widget>ul>li li{list-style:none}.widget>ul>li>a,.widget>ul>li>span:first-child{display:inline-block;padding:6px 0;-webkit-box-flex:1;-ms-flex:1;flex:1}.widget>ul>li:before{font-family:"fl-icons";display:inline-block;opacity:.6;margin-right:6px}.widget>ul>li li>a{font-size:.9em;padding:3px 0;display:inline-block}.widget>ul>li+li{border-top:1px solid #ececec}.dark .widget>ul>li+li{border-color:rgba(255,255,255,.08)}.widget>ul>li ul{border-left:1px solid #ddd;margin:0 0 10px 3px;padding-left:15px;width:100%;display:none}.widget>ul>li ul li{border:0;margin:0}.dark .widget>ul>li ul{border-color:rgba(255,255,255,.08)}.dark .widget>ul>li>a:hover,.dark .widget>ul>li.active>a,.dark .widget>ul>li.current-cat>a{color:#fff}.widget>ul>li.has-child{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.widget .current>ul,.widget .current-cat-parent>ul{display:block}.widget .current-cat>a{color:#000;font-weight:bolder}.wpcf7{color:#333;position:relative}.dark .wpcf7{color:#fff}.wpcf7 p{padding:0;margin:0}.wpcf7 br{display:none}.wpcf7-form .processing *{opacity:.8}.accordion-title{font-size:110%;padding:.6em 2.3em;display:block;position:relative;border-top:1px solid #ddd;-webkit-transition:border 200ms ease-out,background-color .3s;-o-transition:border 200ms ease-out,background-color .3s;transition:border 200ms ease-out,background-color .3s}.dark .accordion-title{border-color:rgba(255,255,255,.2)}.accordion-title.active{border-color:#446084;color:#446084;font-weight:700;background-color:rgba(0,0,0,.03)}.dark .accordion-title.active{color:#fff}.accordion .toggle{width:2.3em;height:1.5em;margin-right:5px;top:.3em;border-radius:999px;position:absolute;-webkit-transform-origin:50% 47%;-ms-transform-origin:50% 47%;transform-origin:50% 47%;left:0}.accordion .active .toggle{opacity:1;color:currentColor}.footer-wrapper{width:100%;position:relative}.absolute-footer,html{background-color:#5b5b5b}.absolute-footer{color:rgba(0,0,0,.5);padding:10px 0 15px;font-size:.9em}.absolute-footer.dark{color:rgba(255,255,255,.5)}.absolute-footer.fixed{left:0;right:0;bottom:0;padding:7.5px 15px;z-index:101;color:#fff;background-color:transparent;text-shadow:1px 1px 1px rgba(0,0,0,.7)}.absolute-footer ul{padding-bottom:5px;opacity:.8;border-bottom:1px solid #ddd}.absolute-footer.dark ul{border-color:rgba(255,255,255,.08)}.absolute-footer.text-center ul{border:0;padding-top:5px}.back-to-top{margin:0;opacity:0;bottom:20px;right:20px;pointer-events:none;-webkit-transform:translateY(30%);-ms-transform:translateY(30%);transform:translateY(30%)}.back-to-top.active{opacity:1;pointer-events:inherit;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.logo{line-height:1;margin:0}.logo a{text-decoration:none;display:block;color:#446084;font-size:32px;text-transform:uppercase;font-weight:bolder;margin:0}.logo img{display:block;width:auto}.header-logo-dark,.nav-dark .header-logo{display:none!important}.nav-dark .header-logo-dark{display:block!important}.nav-dark .logo a{color:#fff}.logo-left .logo{margin-left:0;margin-right:30px}@media screen and (max-width:849px){.header-inner .nav{-ms-flex-wrap:nowrap;flex-wrap:nowrap}.medium-logo-center .flex-left{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;-webkit-box-flex:1;-ms-flex:1 1 0%;flex:1 1 0%}.medium-logo-center .logo{-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2;text-align:center;margin:0 15px}.medium-logo-center .logo img{margin:0 auto}.medium-logo-center .flex-right{-webkit-box-flex:1;-ms-flex:1 1 0%;flex:1 1 0%;-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3}}.page-title{position:relative}.page-title .widget{margin:0 .3em;vertical-align:middle}.scroll-to-bullets{right:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);z-index:999;max-height:100vh;overflow:hidden;position:fixed}.scroll-to-bullets a{display:block;border:3px solid transparent;background-color:#446084;margin:10px 15px;width:15px;height:15px;border-radius:30px;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s;-webkit-box-shadow:1px 1px 1px rgba(0,0,0,.3);box-shadow:1px 1px 1px rgba(0,0,0,.3)}.scroll-to-bullets a:hover{opacity:1;background-color:#fff}.scroll-to-bullets a.active{opacity:1;border-color:#446084;background-color:#fff}.sidebar-menu .search-form{display:block!important}.searchform-wrapper form{margin-bottom:0}.mobile-nav>.search-form,.sidebar-menu .search-form{padding:5px 0;width:100%}.searchform-wrapper:not(.form-flat) .submit-button{border-top-left-radius:0!important;border-bottom-left-radius:0!important}.searchform{position:relative}.searchform .button.icon{margin:0}.searchform .button.icon i{font-size:1.2em}.searchform-wrapper{width:100%}.searchform-wrapper .autocomplete-suggestions{overflow-y:scroll;overflow-y:auto;-webkit-overflow-scrolling:touch;max-height:50vh}.header .search-form .autocomplete-suggestions{max-height:80vh}.col .live-search-results,.header .search-form .live-search-results{text-align:left;color:#111;top:105%;-webkit-box-shadow:0 0 10px 0 rgba(0,0,0,.1);box-shadow:0 0 10px 0 rgba(0,0,0,.1);left:0;right:0;background-color:rgba(255,255,255,.95);position:absolute}.header li .html .live-search-results{top:0;position:relative;-webkit-box-shadow:none;box-shadow:none;background-color:transparent}.icon-menu:before{content:""}.icon-angle-left:before{content:""}.icon-angle-right:before{content:""}.icon-angle-up:before{content:""}.icon-twitter:before{content:""}.icon-envelop:before{content:""}.icon-facebook:before{content:""}.icon-instagram:before{content:""}.icon-search:before{content:""}.text-center .social-icons{margin-left:auto;margin-right:auto}.social-icons{display:inline-block;vertical-align:middle;font-size:.85em;color:#999}.html .social-icons{font-size:1em}.html .social-icons .button{margin-bottom:0}.social-icons span{font-weight:700;padding-right:10px}.social-icons i{min-width:1em}.nav-dark .social-icons,.dark .social-icons{color:#fff}.nav-dark .social-icons .button.is-outline,.dark .social-icons .button.is-outline{border-color:rgba(255,255,255,.5)}.social-icons .button.icon:not(.is-outline),.social-icons .button.icon:hover{background-color:currentColor!important;border-color:currentColor!important}.social-icons .button.icon:not(.is-outline)>i,.social-icons .button.icon:not(.is-outline)>span,.social-icons .button.icon:hover>i,.social-icons .button.icon:hover>span{color:#fff!important}.button.facebook:not(.is-outline),.button.facebook:hover{color:#3a589d!important}.button.instagram:not(.is-outline),.button.instagram:hover{color:#3b6994!important}.button.twitter:not(.is-outline),.button.twitter:hover{color:#2478ba!important}.button.email:not(.is-outline),.button.email:hover{color:#111!important}.button.youtube:not(.is-outline),.button.youtube:hover{color:#c33223!important}@font-face{font-family:"fl-icons";font-display:swap;src:url(https://taipei101group.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot?v=3.15.2);src:url("https://taipei101group.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot#iefix?v=3.15.2") format("embedded-opentype"),url(https://taipei101group.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2?v=3.15.2) format("woff2"),url(https://taipei101group.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf?v=3.15.2) format("truetype"),url(https://taipei101group.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff?v=3.15.2) format("woff"),url("https://taipei101group.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg?v=3.15.2#fl-icons") format("svg")}.bg{opacity:0;transition:opacity 1s;-webkit-transition:opacity 1s}.bg-loaded{opacity:1}:root{--primary-color:#446084}.header-main{height:90px}#logo img{max-height:90px}#logo{width:325px}.header-top{min-height:30px}.transparent .header-main{height:90px}.transparent #logo img{max-height:90px}.has-transparent+.page-title:first-of-type,.has-transparent+#main>.page-title,.has-transparent+#main>div>.page-title{padding-top:90px}.stuck .header-main{height:70px!important}.stuck #logo img{max-height:70px!important}@media (max-width:549px){.header-main{height:70px}#logo img{max-height:70px}}body{font-family:"Lato",sans-serif}body{font-weight:400}.nav>li>a{font-family:"Lato",sans-serif}.nav>li>a{font-weight:700}h1,h2,h5,h6,.off-canvas-center .nav-sidebar.nav-vertical>li>a{font-family:"Lato",sans-serif}h1,h2,h5,h6,.banner h1,.banner h2{font-weight:700}body,h1,h2,h5,h6{font-family:"Roboto",sans-serif!important}.header-wrapper.stuck{height:100px}.header-inner.flex-row.container.logo-left.medium-logo-center{height:100px}.archive-page-header,.blog-archive h1.page-title{display:none}body{--wp--preset--color--black:#000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#fff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgba(6,147,227,1) 0%,#9b51e0 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,#7adcb4 0%,#00d082 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgba(255,105,0,1) 0%,#cf2e2e 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,#eee 0%,#a9b8c3 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,#4aeadc 0%,#9778d1 20%,#cf2aba 40%,#ee2c82 60%,#fb6962 80%,#fef84c 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,#ffceec 0%,#9896f0 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,#fecda5 0%,#fe2d2d 50%,#6b003e 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,#ffcb70 0%,#c751c0 50%,#4158d0 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,#fff5cb 0%,#b6e3d4 50%,#33a7b5 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,#caf880 0%,#71ce7e 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,#020381 0%,#2874fc 100%);--wp--preset--duotone--dark-grayscale:url("#wp-duotone-dark-grayscale");--wp--preset--duotone--grayscale:url("#wp-duotone-grayscale");--wp--preset--duotone--purple-yellow:url("#wp-duotone-purple-yellow");--wp--preset--duotone--blue-red:url("#wp-duotone-blue-red");--wp--preset--duotone--midnight:url("#wp-duotone-midnight");--wp--preset--duotone--magenta-yellow:url("#wp-duotone-magenta-yellow");--wp--preset--duotone--purple-green:url("#wp-duotone-purple-green");--wp--preset--duotone--blue-orange:url("#wp-duotone-blue-orange");--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px}</style>
+<meta name="robots" content="nofollow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://taipei101group.com/tin-tuc/" />
+<link rel="next" href="https://taipei101group.com/tin-tuc/page/2/" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tin Tức - Tuyển dụng Taipei101" />
+<meta property="og:url" content="https://taipei101group.com/tin-tuc/" />
+<meta property="og:site_name" content="Tuyển dụng Taipei101" />
+<meta property="og:image" content="https://taipei101group.com/wp-content/uploads/Tap-doan-TAIPEI-101-Viec-lam-tai-Campuchia-1.jpg" />
+<meta property="og:image:secure_url" content="https://taipei101group.com/wp-content/uploads/Tap-doan-TAIPEI-101-Viec-lam-tai-Campuchia-1.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:alt" content="Tập đoàn TAIPEI 101- Việc làm tại Campuchia" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tin Tức - Tuyển dụng Taipei101" />
+<meta name="twitter:image" content="https://taipei101group.com/wp-content/uploads/Tap-doan-TAIPEI-101-Viec-lam-tai-Campuchia-1.jpg" />
+<meta name="twitter:label1" content="Bài viết" />
+<meta name="twitter:data1" content="29" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://taipei101group.com/#person","name":"root","image":{"@type":"ImageObject","@id":"https://taipei101group.com/#logo","url":"https://taipei101group.com/wp-content/uploads/Tap-doan-TAIPEI-101-Viec-lam-tai-Campuchia-1.jpg","caption":"root","inLanguage":"vi","width":"800","height":"600"}},{"@type":"WebSite","@id":"https://taipei101group.com/#website","url":"https://taipei101group.com","name":"root","publisher":{"@id":"https://taipei101group.com/#person"},"inLanguage":"vi"},{"@type":"CollectionPage","@id":"https://taipei101group.com/tin-tuc/#webpage","url":"https://taipei101group.com/tin-tuc/","name":"Tin T\u1ee9c - Tuy\u1ec3n d\u1ee5ng Taipei101","isPartOf":{"@id":"https://taipei101group.com/#website"},"inLanguage":"vi"}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Dòng thông tin Tuyển dụng Taipei101 &raquo;" href="https://taipei101group.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Tuyển dụng Taipei101 &raquo;" href="https://taipei101group.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dòng thông tin chuyên mục Tuyển dụng Taipei101 &raquo; Tin Tức" href="https://taipei101group.com/tin-tuc/feed/" />
+<link rel="prefetch" href="https://taipei101group.com/wp-content/themes/flatsome/assets/js/chunk.countup.fe2c1016.js" />
+<link rel="prefetch" href="https://taipei101group.com/wp-content/themes/flatsome/assets/js/chunk.sticky-sidebar.a58a6557.js" />
+<link rel="prefetch" href="https://taipei101group.com/wp-content/themes/flatsome/assets/js/chunk.tooltips.29144c1c.js" />
+<link rel="prefetch" href="https://taipei101group.com/wp-content/themes/flatsome/assets/js/chunk.vendors-popups.947eca5c.js" />
+<link rel="prefetch" href="https://taipei101group.com/wp-content/themes/flatsome/assets/js/chunk.vendors-slider.f0d2cbc9.js" />
+
+	
+
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://taipei101group.com/wp-json/" /><link rel="alternate" type="application/json" href="https://taipei101group.com/wp-json/wp/v2/categories/5" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://taipei101group.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://taipei101group.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9" />
+<!--[if IE]><link rel="stylesheet" type="text/css" href="https://taipei101group.com/wp-content/themes/flatsome/assets/css/ie-fallback.css"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><script>var head = document.getElementsByTagName('head')[0],style = document.createElement('style');style.type = 'text/css';style.styleSheet.cssText = ':before,:after{content:none !important';head.appendChild(style);setTimeout(function(){head.removeChild(style);}, 0);</script><script src="https://taipei101group.com/wp-content/themes/flatsome/assets/libs/ie-flexibility.js"></script><![endif]--><link rel="icon" href="https://taipei101group.com/wp-content/uploads/cropped-logo-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://taipei101group.com/wp-content/uploads/cropped-logo-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://taipei101group.com/wp-content/uploads/cropped-logo-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://taipei101group.com/wp-content/uploads/cropped-logo-1-270x270.png" />
+		
+		
+</head>
+
+<body data-rsssl=1 class="archive category category-tin-tuc category-5 full-width lightbox nav-dropdown-has-arrow nav-dropdown-has-shadow nav-dropdown-has-border">
+
+
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+<div id="wrapper">
+
+	
+	<header id="header" class="header has-sticky sticky-jump">
+		<div class="header-wrapper">
+			<div id="masthead" class="header-main ">
+      <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            
+<!-- Header logo -->
+<a href="https://taipei101group.com/" title="Tuyển dụng Taipei101 - Một trang web mới sử dụng WordPress" rel="home">
+		<img width="628" height="628" src="https://taipei101group.com/wp-content/uploads/logo-1.png" class="header_logo header-logo" alt="Tuyển dụng Taipei101"/><img  width="628" height="628" src="https://taipei101group.com/wp-content/uploads/logo-1.png" class="header-logo-dark" alt="Tuyển dụng Taipei101"/></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+              <li class="nav-icon has-icon">
+  		<a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+		
+		  <i class="icon-menu" ></i>
+		  		</a>
+	</li>            </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-uppercase" >
+                          </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
+              <li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-65 menu-item-design-default"><a href="https://taipei101group.com/" class="nav-top-link">Trang Chủ</a></li>
+<li id="menu-item-66" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66 menu-item-design-default"><a href="https://taipei101group.com/gioi-thieu/" class="nav-top-link">Giới Thiệu</a></li>
+<li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144 menu-item-design-default"><a href="https://taipei101group.com/tin-tuyen-dung/" class="nav-top-link">Tin Tuyển Dụng</a></li>
+<li id="menu-item-119" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-119 active menu-item-design-default"><a href="https://taipei101group.com/tin-tuc/" aria-current="page" class="nav-top-link">Tin Tức</a></li>
+<li id="menu-item-120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120 menu-item-design-default"><a href="https://taipei101group.com/nop-ho-so/" class="nav-top-link">Nộp Hồ Sơ</a></li>
+            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+                          </ul>
+          </div>
+
+      </div>
+     
+            <div class="container"><div class="top-divider full-width"></div></div>
+      </div>
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div>		</div>
+	</header>
+    <!-- <div class="body">
+		<header id="header"
+				class="header-narrow header-semi-transparent header-transparent-sticky-deactive custom-header-transparent-bottom-border header-flex"
+				data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 1, 'stickySetTop': '1'}">
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo"> <a href="index.html"> <img src="https://taipei101group.com/wp-content/uploads/logo-1.png"
+											title="Taipei101 Group" alt="Taipei101 Group" width="60%">
+									</a> </div>
+							</div>
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-nav header-nav-dark-dropdown"> <button
+											class="btn header-btn-collapse-nav" data-toggle="collapse"
+											data-target=".header-nav-main"> <i class="fa fa-bars"></i> </button>
+										<div
+											class="header-nav-main header-nav-main-square custom-header-nav-main-effect-1 collapse">
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+													<li> <a href="https://taipei101group.com" target="_self"> Trang chủ </a> </li>
+													<li> <a href="/gioi-thieu" target="_self">Giới thiệu</a> </li>
+													<li> <a href="" target="_self">Tin tuyển dụng</a> </li>
+													<li> <a href="" target="_self"> Tin tức </a> </li>
+													<li> <a href="" target="_self"> Nộp hồ sơ </a> </li>
+												</ul>
+											</nav>
+											<script type="rocketlazyloadscript"> /*$(document).ready(function () { $('nav > ul.nav#mainNav > li > a[href="' + window.location.href + '"]').closest('li').removeClass(); $('nav > ul.nav#mainNav > li > a[href="' + window.location.href + '"]').parent().addClass('active'); });*/</script>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header> -->
+
+	
+	<main id="main" class="">
+
+<div id="content" class="blog-wrapper blog-archive page-wrapper">
+		<header class="archive-page-header">
+	<div class="row">
+	<div class="large-12 text-center col">
+	<h1 class="page-title is-large uppercase">
+		Category Archives: <span>Tin Tức</span>	</h1>
+		</div>
+	</div>
+</header>
+
+
+	
+  
+    <div id="row-840572123" class="featured-posts mb slider slider-auto-height row-collapse slider-nav-circle" data-flickity-options='{"imagesLoaded": true, "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>
+
+  <div class="col post-item" >
+			<div class="col-inner">
+			<a href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/" class="plain">
+				<div class="box box-shade dark box-text-bottom box-blog-post has-hover">
+            					<div class="box-image" >
+  						<div class="image-cover" style="padding-top:500px;">
+  							<img width="570" height="570" src="https://taipei101group.com/wp-content/uploads/f88.jpg" class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" />  							  							<div class="shade"></div>  						</div>
+  						  					</div>
+          					<div class="box-text text-center" style="padding:5% 15% 5% 15%;">
+					<div class="box-text-inner blog-post-inner">
+
+					
+											<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tin Tức 					</p>
+										<h5 class="post-title is-xlarge ">Tuyển dụng f8bet nhiều vị trí khác nhau</h5>
+										<div class="is-divider"></div>
+										<p class="from_the_blog_excerpt ">Tuyển dụng f8bet luôn luôn không ngừng tìm kiếm những ứng viên tiềm năng. Bạn [...]					</p>
+					                    
+											<button href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/" class="button  is-outline is-small mb-0">
+							Continue reading <span class="meta-nav">&rarr;</span>						</button>
+					
+					
+					</div>
+					</div>
+																<div class="badge absolute top post-date badge-outline">
+							<div class="badge-inner">
+								<span class="post-date-day">04</span><br>
+								<span class="post-date-month is-xsmall">Th3</span>
+							</div>
+						</div>
+									</div>
+				</a>
+			</div>
+		</div><div class="col post-item" >
+			<div class="col-inner">
+			<a href="https://taipei101group.com/tuyen-dung-new88com-tai-ha-noi-voi-muc-luong/" class="plain">
+				<div class="box box-shade dark box-text-bottom box-blog-post has-hover">
+            					<div class="box-image" >
+  						<div class="image-cover" style="padding-top:500px;">
+  							<img width="225" height="225" src="https://taipei101group.com/wp-content/uploads/neww.png" class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" />  							  							<div class="shade"></div>  						</div>
+  						  					</div>
+          					<div class="box-text text-center" style="padding:5% 15% 5% 15%;">
+					<div class="box-text-inner blog-post-inner">
+
+					
+											<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tin Tuyển Dụng 					</p>
+										<h5 class="post-title is-xlarge ">Tuyển dụng new88 tại Hà Nội với mức lương hấp dẫn</h5>
+										<div class="is-divider"></div>
+										<p class="from_the_blog_excerpt ">Tuyển dụng new88 tại Hà Nội với mức lương hấp dẫn được nhiều người quan tâm [...]					</p>
+					                    
+											<button href="https://taipei101group.com/tuyen-dung-new88com-tai-ha-noi-voi-muc-luong/" class="button  is-outline is-small mb-0">
+							Continue reading <span class="meta-nav">&rarr;</span>						</button>
+					
+					
+					</div>
+					</div>
+																<div class="badge absolute top post-date badge-outline">
+							<div class="badge-inner">
+								<span class="post-date-day">03</span><br>
+								<span class="post-date-month is-xsmall">Th3</span>
+							</div>
+						</div>
+									</div>
+				</a>
+			</div>
+		</div><div class="col post-item" >
+			<div class="col-inner">
+			<a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/" class="plain">
+				<div class="box box-shade dark box-text-bottom box-blog-post has-hover">
+            					<div class="box-image" >
+  						<div class="image-cover" style="padding-top:500px;">
+  							<img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-game-truc-tuyen-1-1.jpg" class="attachment-medium size-medium wp-post-image" alt="nhà tuyển dụng game trực tuyến" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-game-truc-tuyen-1-1.jpg 800w, https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-game-truc-tuyen-1-1-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" />  							  							<div class="shade"></div>  						</div>
+  						  					</div>
+          					<div class="box-text text-center" style="padding:5% 15% 5% 15%;">
+					<div class="box-text-inner blog-post-inner">
+
+					
+											<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tin Tức 					</p>
+										<h5 class="post-title is-xlarge ">Mách bạn nhà tuyển dụng game trực tuyến siêu hot hiện nay </h5>
+										<div class="is-divider"></div>
+										<p class="from_the_blog_excerpt ">Hiện nay, game trực tuyến là lĩnh vực rất phát triển và nhận được nhiều [...]					</p>
+					                    
+											<button href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/" class="button  is-outline is-small mb-0">
+							Continue reading <span class="meta-nav">&rarr;</span>						</button>
+					
+					
+					</div>
+					</div>
+																<div class="badge absolute top post-date badge-outline">
+							<div class="badge-inner">
+								<span class="post-date-day">02</span><br>
+								<span class="post-date-month is-xsmall">Th3</span>
+							</div>
+						</div>
+									</div>
+				</a>
+			</div>
+		</div><div class="col post-item" >
+			<div class="col-inner">
+			<a href="https://taipei101group.com/tim-kiem-viec-lam/" class="plain">
+				<div class="box box-shade dark box-text-bottom box-blog-post has-hover">
+            					<div class="box-image" >
+  						<div class="image-cover" style="padding-top:500px;">
+  							<img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/timviecnhanh.jpg" class="attachment-medium size-medium wp-post-image" alt="Tìm kiếm việc làm lại Tìm việc nhanh" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/timviecnhanh.jpg 800w, https://taipei101group.com/wp-content/uploads/timviecnhanh-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" />  							  							<div class="shade"></div>  						</div>
+  						  					</div>
+          					<div class="box-text text-center" style="padding:5% 15% 5% 15%;">
+					<div class="box-text-inner blog-post-inner">
+
+					
+											<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tin Tức 					</p>
+										<h5 class="post-title is-xlarge ">Top 4 website tìm kiếm việc làm miễn phí, uy tín</h5>
+										<div class="is-divider"></div>
+										<p class="from_the_blog_excerpt ">Bạn là ứng viên đang tìm kiếm việc làm phù hợp? Bạn có nhu cầu [...]					</p>
+					                    
+											<button href="https://taipei101group.com/tim-kiem-viec-lam/" class="button  is-outline is-small mb-0">
+							Continue reading <span class="meta-nav">&rarr;</span>						</button>
+					
+					
+					</div>
+					</div>
+																<div class="badge absolute top post-date badge-outline">
+							<div class="badge-inner">
+								<span class="post-date-day">02</span><br>
+								<span class="post-date-month is-xsmall">Th3</span>
+							</div>
+						</div>
+									</div>
+				</a>
+			</div>
+		</div><div class="col post-item" >
+			<div class="col-inner">
+			<a href="https://taipei101group.com/nha-tuyen-dung-new88/" class="plain">
+				<div class="box box-shade dark box-text-bottom box-blog-post has-hover">
+            					<div class="box-image" >
+  						<div class="image-cover" style="padding-top:500px;">
+  							<img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-new88-1.jpg" class="attachment-medium size-medium wp-post-image" alt="Nhà tuyển dụng new88" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-new88-1.jpg 800w, https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-new88-1-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" />  							  							<div class="shade"></div>  						</div>
+  						  					</div>
+          					<div class="box-text text-center" style="padding:5% 15% 5% 15%;">
+					<div class="box-text-inner blog-post-inner">
+
+					
+											<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tin Tức 					</p>
+										<h5 class="post-title is-xlarge ">Giới thiệu nhà tuyển dụng New88- Mức lương hấp dẫn bạn không nên bỏ qua</h5>
+										<div class="is-divider"></div>
+										<p class="from_the_blog_excerpt ">Nhà tuyển dụng New88 là việc cực kỳ thu hút cho những người đang đi [...]					</p>
+					                    
+											<button href="https://taipei101group.com/nha-tuyen-dung-new88/" class="button  is-outline is-small mb-0">
+							Continue reading <span class="meta-nav">&rarr;</span>						</button>
+					
+					
+					</div>
+					</div>
+																<div class="badge absolute top post-date badge-outline">
+							<div class="badge-inner">
+								<span class="post-date-day">02</span><br>
+								<span class="post-date-month is-xsmall">Th3</span>
+							</div>
+						</div>
+									</div>
+				</a>
+			</div>
+		</div></div>
+
+<div class="row row-large row-divided ">
+
+	<div class="large-9 col">
+		<div id="post-list">
+
+
+<article id="post-523" class="post-523 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc tag-f8bet">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/" rel="bookmark" class="plain">Tuyển dụng f8bet nhiều vị trí khác nhau</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/" rel="bookmark"><time class="entry-date published updated" datetime="2022-03-04T16:17:40+00:00">4 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/duyen/">duyen</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/">
+    <img width="570" height="570" src="https://taipei101group.com/wp-content/uploads/f88.jpg" class="attachment-large size-large wp-post-image" alt="" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">04</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Tuyển dụng f8bet luôn luôn không ngừng tìm kiếm những ứng viên tiềm năng. Bạn có thể dễ dàng tìm kiếm một công việc phù hợp tại F8bet. Cùng https://taipei101group.com [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+				<span class="sep">&nbsp;|&nbsp;</span>
+		<span class="tags-links">
+			Tagged <a href="https://taipei101group.com/tag/f8bet/" rel="tag">f8bet</a>		</span>
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/tuyen-dung-f8bet-nhieu-vi-tri-khac-nhau/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-502" class="post-502 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/" rel="bookmark" class="plain">Mách bạn nhà tuyển dụng game trực tuyến siêu hot hiện nay </a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/" rel="bookmark"><time class="entry-date published updated" datetime="2022-03-02T15:03:00+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-game-truc-tuyen-1-1.jpg" class="attachment-large size-large wp-post-image" alt="nhà tuyển dụng game trực tuyến" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-game-truc-tuyen-1-1.jpg 800w, https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-game-truc-tuyen-1-1-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Hiện nay, game trực tuyến là lĩnh vực rất phát triển và nhận được nhiều sự quan tâm. Vì thế nên nhiều vị trí công việc càng có nhu cầu [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen-2/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-508" class="post-508 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/tim-kiem-viec-lam/" rel="bookmark" class="plain">Top 4 website tìm kiếm việc làm miễn phí, uy tín</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/tim-kiem-viec-lam/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T14:35:42+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T15:03:25+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/tim-kiem-viec-lam/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/timviecnhanh.jpg" class="attachment-large size-large wp-post-image" alt="Tìm kiếm việc làm lại Tìm việc nhanh" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/timviecnhanh.jpg 800w, https://taipei101group.com/wp-content/uploads/timviecnhanh-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Bạn là ứng viên đang tìm kiếm việc làm phù hợp? Bạn có nhu cầu ứng tuyển nhưng không biết công ty nào tuyển dụng? Nếu như bạn cũng đang [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/tim-kiem-viec-lam/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/tim-kiem-viec-lam/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-498" class="post-498 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/nha-tuyen-dung-new88/" rel="bookmark" class="plain">Giới thiệu nhà tuyển dụng New88- Mức lương hấp dẫn bạn không nên bỏ qua</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/nha-tuyen-dung-new88/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T12:42:52+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T15:03:41+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/nha-tuyen-dung-new88/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-new88-1.jpg" class="attachment-large size-large wp-post-image" alt="Nhà tuyển dụng new88" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-new88-1.jpg 800w, https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-new88-1-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Nhà tuyển dụng New88 là việc cực kỳ thu hút cho những người đang đi tìm một công việc tốt. Nhà cái là nơi tạo cho nguồn nhân lực của [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/nha-tuyen-dung-new88/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/nha-tuyen-dung-new88/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-494" class="post-494 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/nha-tuyen-dung-shbet/" rel="bookmark" class="plain">Nhà tuyển dụng Shbet &#8211; 4 ưu điểm tạo nên thương hiệu</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/nha-tuyen-dung-shbet/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T12:36:01+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T15:03:53+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/nha-tuyen-dung-shbet/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-Shbet.jpg" class="attachment-large size-large wp-post-image" alt="Nhà tuyển dụng Shbet" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-Shbet.jpg 800w, https://taipei101group.com/wp-content/uploads/Nha-tuyen-dung-Shbet-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Hiện nay,Nhà tuyển dụng Shbet hiện nay là một trong những doanh nghiệp kinh doanh game trực tuyến. Chính vì vậy, đối với những ứng viên đam mê game online [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/nha-tuyen-dung-shbet/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/nha-tuyen-dung-shbet/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-486" class="post-486 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc tag-tap-doan-taipei101">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/tap-doan-taipei101-tuyen-dung-tai-campuchia-2/" rel="bookmark" class="plain">Tập Đoàn Taipei101 tuyển dụng tại Campuchia</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/tap-doan-taipei101-tuyen-dung-tai-campuchia-2/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T11:54:29+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T12:00:19+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/duyen/">duyen</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/tap-doan-taipei101-tuyen-dung-tai-campuchia-2/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/nhan-vien-seo-content-2.jpg" class="attachment-large size-large wp-post-image" alt="nhân viên SEO/CONTENT" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/nhan-vien-seo-content-2.jpg 800w, https://taipei101group.com/wp-content/uploads/nhan-vien-seo-content-2-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Tập đoàn Taipei 101 là một trong những tập đoàn hàng đầu trong lĩnh vực casino. Hiện nay, với nhu cầu mở rộng quy mô, tập đoàn luôn luôn sẵn [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/tap-doan-taipei101-tuyen-dung-tai-campuchia-2/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+				<span class="sep">&nbsp;|&nbsp;</span>
+		<span class="tags-links">
+			Tagged <a href="https://taipei101group.com/tag/tap-doan-taipei101/" rel="tag">Tập đoàn TAIPEI101</a>		</span>
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/tap-doan-taipei101-tuyen-dung-tai-campuchia-2/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-480" class="post-480 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc tag-viec-lam-tai-jun88">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/nha-tuyen-dung-jun88/" rel="bookmark" class="plain">Tại sao nhà tuyển dụng Jun88 là nơi bạn nên ứng tuyển công việc</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/nha-tuyen-dung-jun88/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T09:57:58+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T11:55:26+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/nha-tuyen-dung-jun88/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/Viec-lam-tai-Jun88.jpg" class="attachment-large size-large wp-post-image" alt="Việc làm tại nhà tuyển dụng Jun88" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/Viec-lam-tai-Jun88.jpg 800w, https://taipei101group.com/wp-content/uploads/Viec-lam-tai-Jun88-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Đối với những tay chơi game trực tuyến thì không thể nào không biết đến nhà tuyển dụng Jun88. Đây là một trong những nhà tuyển dụng hàng đầu trong [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/nha-tuyen-dung-jun88/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+				<span class="sep">&nbsp;|&nbsp;</span>
+		<span class="tags-links">
+			Tagged <a href="https://taipei101group.com/tag/viec-lam-tai-jun88/" rel="tag">Việc làm tại Jun88</a>		</span>
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/nha-tuyen-dung-jun88/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-463" class="post-463 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen/" rel="bookmark" class="plain">Top 4 nhà tuyển dụng game trực tuyến uy tín nhất mà bạn không nên bỏ qua</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T07:52:15+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T12:05:46+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-game-truc-tuyen-2.jpg" class="attachment-large size-large wp-post-image" alt="Nhà tuyển dụng game trực tuyến" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-game-truc-tuyen-2.jpg 800w, https://taipei101group.com/wp-content/uploads/nha-tuyen-dung-game-truc-tuyen-2-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Hiện nay, nhà tuyển dụng game trực tuyến đang rất thu hút sự quan tâm của nhiều người trên nước ta. Đi đôi với đó là những vị trí công [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/nha-tuyen-dung-game-truc-tuyen/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-474" class="post-474 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/nhan-vien-seo-content/" rel="bookmark" class="plain">Nhân viên SEO/CONTENT tại tập đoàn TAIPEI 101 có gì hot &#8211; Khám phá ngay </a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/nhan-vien-seo-content/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T07:44:20+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T12:05:58+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/nhan-vien-seo-content/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/nhan-vien-seo-content-1.jpg" class="attachment-large size-large wp-post-image" alt="nhân viên SEO/CONTENT" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/nhan-vien-seo-content-1.jpg 800w, https://taipei101group.com/wp-content/uploads/nhan-vien-seo-content-1-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Trong khoảng thời gian gần đây, vị trí nhân viên SEO/CONTENT đang trở nên thu hút. Đây là một ngành nghề được giới trẻ khá hứng thú và lựa chọn. [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/nhan-vien-seo-content/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/nhan-vien-seo-content/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<article id="post-464" class="post-464 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc tag-mau-cv-xin-viec-mien-phi">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-center">
+		<h6 class="entry-category is-xsmall">
+	<a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a></h6>
+
+<h2 class="entry-title"><a href="https://taipei101group.com/tim-viec-nhanh/" rel="bookmark" class="plain">Tham khảo tại Tìm việc nhanh hơn 50 mẫu CV xin việc miễn phí</a></h2>
+<div class="entry-divider is-divider small"></div>
+
+	<div class="entry-meta uppercase is-xsmall">
+		<span class="posted-on">Posted on <a href="https://taipei101group.com/tim-viec-nhanh/" rel="bookmark"><time class="entry-date published" datetime="2022-03-02T07:19:28+00:00">2 Tháng Ba, 2022</time><time class="updated" datetime="2022-03-02T12:06:06+00:00">2 Tháng Ba, 2022</time></a></span><span class="byline"> by <span class="meta-author vcard"><a class="url fn n" href="https://taipei101group.com/author/pthao/">PThao</a></span></span>	</div>
+	</div>
+						<div class="entry-image relative">
+				<a href="https://taipei101group.com/tim-viec-nhanh/">
+    <img width="800" height="600" src="https://taipei101group.com/wp-content/uploads/Anh-2-Mau-CV-xin-viec-mien-phi.jpg" class="attachment-large size-large wp-post-image" alt="Mẫu CV xin việc miễn phí" loading="lazy" srcset="https://taipei101group.com/wp-content/uploads/Anh-2-Mau-CV-xin-viec-mien-phi.jpg 800w, https://taipei101group.com/wp-content/uploads/Anh-2-Mau-CV-xin-viec-mien-phi-768x576.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">02</span><br>
+		<span class="post-date-month is-small">Th3</span>
+	</div>
+</div>			</div>
+			</header>
+		<div class="entry-content">
+		<div class="entry-summary">
+		<p>Hiện nay, đối với ứng viên Tìm việc nhanh thì CV là một yêu cầu mà bạn cần phải chú ý. Tuy nhiên, không phải mẫu CV xin việc miễn [&#8230;]
+		<div class="text-center">
+			<a class="more-link button primary is-outline is-smaller" href="https://taipei101group.com/tim-viec-nhanh/">Continue reading <span class="meta-nav">&rarr;</span></a>
+		</div>
+	</div>
+	
+</div>		<footer class="entry-meta clearfix">
+					<span class="cat-links">
+			Posted in <a href="https://taipei101group.com/tin-tuc/" rel="category tag">Tin Tức</a>		</span>
+
+				<span class="sep">&nbsp;|&nbsp;</span>
+		<span class="tags-links">
+			Tagged <a href="https://taipei101group.com/tag/mau-cv-xin-viec-mien-phi/" rel="tag">mẫu CV xin việc miễn phí</a>		</span>
+			
+		<span class="comments-link pull-right"><a href="https://taipei101group.com/tim-viec-nhanh/#respond">Leave a comment</a></span>
+	</footer>
+	</div>
+</article>
+
+
+<ul class="page-numbers nav-pagination links text-center"><li><span aria-current="page" class="page-number current">1</span></li><li><a class="page-number" href="https://taipei101group.com/tin-tuc/page/2/">2</a></li><li><a class="page-number" href="https://taipei101group.com/tin-tuc/page/3/">3</a></li><li><a class="next page-number" href="https://taipei101group.com/tin-tuc/page/2/"><i class="icon-angle-right" ></i></a></li></ul>
+</div>
+
+	</div>
+	<div class="post-sidebar large-3 col">
+				<div id="secondary" class="widget-area " role="complementary">
+		<aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><a href="https://bitly.com.vn/70ujm3"><img src="https://taipei101group.com/wp-content/uploads/gif-789bet.gif" alt="" /></a>
+<a href="https://bitly.com.vn/70ujm3"><img src="https://taipei101group.com/wp-content/uploads/gif-j88-10f.gif" alt="" /></a></div></aside></div>
+			</div>
+</div>
+
+</div>
+
+
+</main>
+
+<footer id="footer" class="footer-wrapper">
+
+	
+<!-- FOOTER 1 -->
+
+<!-- FOOTER 2 -->
+
+
+
+<div class="absolute-footer dark medium-text-center small-text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+            <div class="copyright-footer">
+        © Copyright 2022 Taipei101 Group.      </div>
+          </div>
+  </div>
+</div>
+
+<a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link" aria-label="Go to top"><i class="icon-angle-up" ></i></a>
+
+</footer>
+
+</div>
+
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+
+	
+	<div class="sidebar-menu no-scrollbar ">
+
+		
+					<ul class="nav nav-sidebar nav-vertical nav-uppercase" data-tab="1">
+				<li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<div class="searchform-wrapper ux-search-box relative is-normal"><form method="get" class="searchform" action="https://taipei101group.com/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Search&hellip;" />
+			</div>
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+					<i class="icon-search" ></i>				</button>
+			</div>
+		</div>
+    <div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-65"><a href="https://taipei101group.com/">Trang Chủ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="https://taipei101group.com/gioi-thieu/">Giới Thiệu</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144"><a href="https://taipei101group.com/tin-tuyen-dung/">Tin Tuyển Dụng</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-119"><a href="https://taipei101group.com/tin-tuc/" aria-current="page">Tin Tức</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120"><a href="https://taipei101group.com/nop-ho-so/">Nộp Hồ Sơ</a></li>
+WooCommerce not Found<li class="header-newsletter-item has-icon">
+
+  <a href="#header-newsletter-signup" class="tooltip" title="Sign up for Newsletter">
+
+    <i class="icon-envelop"></i>
+    <span class="header-newsletter-title">
+      Newsletter    </span>
+  </a>
+
+</li><li class="html header-social-icons ml-0">
+	<div class="social-icons follow-icons" ><a href="http://url" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="icon-facebook" ></i></a><a href="http://url" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon plain  instagram tooltip" title="Follow on Instagram" aria-label="Follow on Instagram"><i class="icon-instagram" ></i></a><a href="http://url" target="_blank" data-label="Twitter" rel="noopener noreferrer nofollow" class="icon plain  twitter tooltip" title="Follow on Twitter" aria-label="Follow on Twitter"><i class="icon-twitter" ></i></a><a href="mailto:your@email" data-label="E-mail" rel="nofollow" class="icon plain  email tooltip" title="Send us an email" aria-label="Send us an email"><i class="icon-envelop" ></i></a></div></li>			</ul>
+		
+		
+	</div>
+
+	
+</div>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/taipei101group.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-content/cache/min/1/wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js?ver=1646119851' id='flatsome-live-search-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-includes/js/hoverIntent.min.js?ver=1.10.1' id='hoverIntent-js'></script>
+<script type='text/javascript' id='flatsome-js-js-extra'>
+/* <![CDATA[ */
+var flatsomeVars = {"theme":{"version":"3.15.2"},"ajaxurl":"https:\/\/taipei101group.com\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"70","assets_url":"https:\/\/taipei101group.com\/wp-content\/themes\/flatsome\/assets\/js\/","lightbox":{"close_markup":"<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"><\/line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"><\/line><\/svg><\/button>","close_btn_inside":false},"user":{"can_edit_pages":false},"i18n":{"mainMenu":"Main Menu"},"options":{"cookie_notice_version":"1","swatches_layout":false,"swatches_box_select_event":false,"swatches_box_behavior_selected":false,"swatches_box_update_urls":"1","swatches_box_reset":false,"swatches_box_reset_extent":false,"swatches_box_reset_time":300,"search_result_latency":"0"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://taipei101group.com/wp-content/cache/min/1/wp-content/themes/flatsome/assets/js/flatsome.js?ver=1646119851' id='flatsome-js-js'></script>
+<!--[if IE]>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/intersection-observer-polyfill@0.1.0/dist/IntersectionObserver.js?ver=0.1.0' id='intersection-observer-polyfill-js'></script>
+<![endif]-->
+	<!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script type="rocketlazyloadscript">
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "2438486832850966");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script type="rocketlazyloadscript">
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-219524860-1">
+	</script>
+	<script type="rocketlazyloadscript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-219524860-1');
+	</script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1646622735 -->
